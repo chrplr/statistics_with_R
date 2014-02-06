@@ -63,7 +63,9 @@ detach(ow)
 
 ```{r ezanova}
 require(ez)
+ow$sub <- factor(1:nrow(ow))
 ez_model <- ezANOVA(data=ow,
+                    wid=sub,
                     dv=y,
                     between = group)
 print(ez_model)
