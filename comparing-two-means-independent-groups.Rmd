@@ -8,6 +8,7 @@ christophe@pallier.org
 rm(list=ls())
 par(las=1, mar=c(2,3,1,1),mfrow=c(1,1))
 
+
 # the "standard error" function
 se <- function(x) { sd(x)/sqrt(length(x)) }
 ```

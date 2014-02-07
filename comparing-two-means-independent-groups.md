@@ -40,12 +40,12 @@ head(tg)
 
 ```
 ##   group     y
-## 1   Gr1 431.0
-## 2   Gr1 513.1
-## 3   Gr1 539.8
-## 4   Gr1 465.9
-## 5   Gr1 554.8
-## 6   Gr1 483.7
+## 1   Gr1 472.9
+## 2   Gr1 552.4
+## 3   Gr1 455.6
+## 4   Gr1 507.7
+## 5   Gr1 535.2
+## 6   Gr1 514.7
 ```
 
 ```r
@@ -55,7 +55,7 @@ str(tg)
 ```
 ## 'data.frame':	50 obs. of  2 variables:
 ##  $ group: Factor w/ 2 levels "Gr1","Gr2": 1 1 1 1 1 1 1 1 1 1 ...
-##  $ y    : num  431 513 540 466 555 ...
+##  $ y    : num  473 552 456 508 535 ...
 ```
 
 ```r
@@ -124,7 +124,7 @@ signif(tapply(y, group, mean), 3)
 
 ```
 ## Gr1 Gr2 
-## 510 526
+## 499 531
 ```
 
 ```r
@@ -133,7 +133,7 @@ signif(tapply(y, group, median), 3)
 
 ```
 ## Gr1 Gr2 
-## 507 515
+## 505 531
 ```
 
 ```r
@@ -142,7 +142,7 @@ signif(tapply(y, group, sd), 3)
 
 ```
 ##  Gr1  Gr2 
-## 33.0 31.2
+## 36.2 24.4
 ```
 
 ```r
@@ -151,7 +151,7 @@ signif(tapply(y, group, se), 3)
 
 ```
 ##  Gr1  Gr2 
-## 6.03 6.98
+## 6.61 5.46
 ```
 
 ```r
@@ -173,13 +173,13 @@ t.test(y ~ group, data = tg, var.equal = TRUE)
 ## 	Two Sample t-test
 ## 
 ## data:  y by group
-## t = -1.753, df = 48, p-value = 0.08597
+## t = -3.445, df = 48, p-value = 0.001196
 ## alternative hypothesis: true difference in means is not equal to 0
 ## 95 percent confidence interval:
-##  -35.123   2.403
+##  -50.50 -13.28
 ## sample estimates:
 ## mean in group Gr1 mean in group Gr2 
-##             509.5             525.9
+##             499.2             531.1
 ```
 
 ```r
@@ -191,13 +191,13 @@ t.test(y ~ group, data = tg)
 ## 	Welch Two Sample t-test
 ## 
 ## data:  y by group
-## t = -1.773, df = 42.45, p-value = 0.08334
+## t = -3.719, df = 47.98, p-value = 0.0005238
 ## alternative hypothesis: true difference in means is not equal to 0
 ## 95 percent confidence interval:
-##  -34.972   2.252
+##  -49.13 -14.65
 ## sample estimates:
 ## mean in group Gr1 mean in group Gr2 
-##             509.5             525.9
+##             499.2             531.1
 ```
 
 
@@ -228,18 +228,18 @@ summary(lm(y ~ group, data = tg))
 ## 
 ## Residuals:
 ##    Min     1Q Median     3Q    Max 
-## -78.52 -21.91  -4.42  22.96  64.88 
+## -63.94 -24.69   1.42  22.73  79.86 
 ## 
 ## Coefficients:
 ##             Estimate Std. Error t value Pr(>|t|)    
-## (Intercept)   509.52       5.90   86.33   <2e-16 ***
-## group2         16.36       9.33    1.75    0.086 .  
+## (Intercept)   499.24       5.85   85.27   <2e-16 ***
+## group2         31.89       9.26    3.44   0.0012 ** 
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
-## Residual standard error: 32.3 on 48 degrees of freedom
-## Multiple R-squared:  0.0602,	Adjusted R-squared:  0.0406 
-## F-statistic: 3.07 on 1 and 48 DF,  p-value: 0.086
+## Residual standard error: 32.1 on 48 degrees of freedom
+## Multiple R-squared:  0.198,	Adjusted R-squared:  0.182 
+## F-statistic: 11.9 on 1 and 48 DF,  p-value: 0.0012
 ```
 
 
@@ -268,18 +268,18 @@ summary(lm(y ~ group, data = tg))
 ## 
 ## Residuals:
 ##    Min     1Q Median     3Q    Max 
-## -78.52 -21.91  -4.42  22.96  64.88 
+## -63.94 -24.69   1.42  22.73  79.86 
 ## 
 ## Coefficients:
 ##             Estimate Std. Error t value Pr(>|t|)    
-## (Intercept)   517.70       4.67  110.95   <2e-16 ***
-## group1         -8.18       4.67   -1.75    0.086 .  
+## (Intercept)   515.18       4.63  111.30   <2e-16 ***
+## group1        -15.95       4.63   -3.44   0.0012 ** 
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
-## Residual standard error: 32.3 on 48 degrees of freedom
-## Multiple R-squared:  0.0602,	Adjusted R-squared:  0.0406 
-## F-statistic: 3.07 on 1 and 48 DF,  p-value: 0.086
+## Residual standard error: 32.1 on 48 degrees of freedom
+## Multiple R-squared:  0.198,	Adjusted R-squared:  0.182 
+## F-statistic: 11.9 on 1 and 48 DF,  p-value: 0.0012
 ```
 
 
