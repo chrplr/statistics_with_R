@@ -33,9 +33,8 @@ summary(aov(x ~ A * B, data=dat))
 Using ez
 
 ```{r}
-### We should be able to do a nicer interaction plot, but I do not manage yet :(
-#ezPlot(data=dat, dv=.(x), wid=.(subject), between=.(A,B),x=.(B))
-# TODO: Check with example(ezPlot)
+ezPlot(data=dat,  dv=.(x), wid=.(subject), between=.(A,B), 
+       x=.(B), split=.(A))
 
 ezANOVA(data=dat, dv=x, wid=subject, between=c('A','B'))
 ```
@@ -68,6 +67,9 @@ detach(dat)
 ```
 
 ```{r}
+ezPlot(data=dat,  dv=.(x), wid=.(subject), between=.(A), within=.(B), 
+       x=.(B), split=.(A))
+
 ezANOVA(data=dat,
         dv=x,
         wid=subject,
